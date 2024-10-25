@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_uts/screen/home.dart';
 import 'package:flutter_application_uts/screen/login.dart';
 import 'package:flutter_application_uts/screen/regiser.dart';
+import 'package:flutter_application_uts/screen/home.dart'; // Import halaman Home
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  @override
+  const MyApp({super.key});
+
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter UTS',
+      debugShowCheckedModeBanner: false,
+      title: 'Login/Register Flutter',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginScreen(),
-        '/register': (context) => RegisterScreen(),
-        '/home': (context) => HomeScreen(),
+        '/': (context) => LoginPage(),
+        '/register': (context) => const RegisterPage(),
+        '/home': (context) => HomePage(), // Tambah route untuk halaman Home
       },
     );
   }
